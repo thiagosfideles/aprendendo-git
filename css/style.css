@@ -177,3 +177,11 @@ a.article:hover {
   background-color: #0d47a1;
   border-color: #0d47a1;
 }
+
+/* ---------------------------------------------------
+    CALENDAR CLASS
+----------------------------------------------------- */
+.curso-ti {
+    background-color: #f57c00 !important;
+    border-color: #f57c00 !important
+}
