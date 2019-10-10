@@ -185,3 +185,11 @@ a.article:hover {
     background-color: #f57c00 !important;
     border-color: #f57c00 !important
 }
+
+
+/* ---------------------------------------------------
+    MODAL
+----------------------------------------------------- */
+.erro-preenchimento {
+    display: none;
+}

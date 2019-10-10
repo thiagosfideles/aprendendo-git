@@ -33,27 +33,21 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+                <h3>Agenda</h3>
             </div>
 
             <ul class="list-unstyled components">
                 <p>Dummy Heading</p>
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Marcação de Aulas</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
+                            <a href="#" data-toggle="modal" data-target="#addNovoEvento">Nova aula</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#">Dashboard</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
@@ -119,8 +113,8 @@
             <div class="line"></div>
             <!-- /#Calendar  -->
             
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNovoEvento">
-              Launch demo modal
+            <button type="button" class="btn btn-primary" onclick={fuiClicado()}>
+              teste function
             </button>
             <!-- /Modal  -->
             <div class="modal fade" id="addNovoEvento" tabindex="-1" role="dialog" aria-labelledby="addNovoEvento" aria-hidden="true">
@@ -136,37 +130,53 @@
                     <form>
                       <div class="form-group">
                         <label for="dataNovaAula" class="col-form-label">Data:</label>
-                        <input type="date" class="form-control" id="dataNovaAula" required >
+                        <input type="date" class="form-control {startVazio ? 'is-invalid' : ''}" id="dataNovaAula">
                       </div>
                       <div class="form-group">
                         <label for="cursoNovaAula" class="col-form-label">Curso:</label>
-                        <input type="text" class="form-control" id="cursoNovaAula" required >
+                        <select class="custom-select {cursoVazio ? 'is-invalid' : ''}" id="cursoNovaAula">
+                            <option selected>Escolha...</option>
+                            <option value="TA">Técnico em Administração</option>
+                            <option value="TI">Técnico em Informática</option>
+                          </select>
                       </div>
                       <div class="form-group">
                         <label for="moduloNovaAula" class="col-form-label">Módulo:</label>
-                        <input type="text" class="form-control" id="moduloNovaAula" required >
+                          <select class="custom-select {moduloVazio ? 'is-invalid' : ''}" id="moduloNovaAula">
+                            <option selected>Escolha...</option>
+                            <option value="1">Módulo I</option>
+                            <option value="2">Módulo II</option>
+                            <option value="3">Módulo III</option>
+                            <option value="4">Módulo IV</option>
+                          </select>
                       </div>
                       <div class="form-group">
                         <label for="disciplinaNovaAula" class="col-form-label">Discplina:</label>
-                        <input type="text" class="form-control" id="disciplinaNovaAula" required >
+                        <input type="text" class="form-control {titleVazio ? 'is-invalid' : ''}" id="disciplinaNovaAula" >
+                      </div>
+                      <div class="form-group">
+                        <label for="professorNovaAula" class="col-form-label">Professor:</label>
+                        <input type="text" class="form-control {professorVazio ? 'is-invalid' : ''}" id="professorNovaAula"  >
                       </div>
                       <div class="form-group">
                         <label for="slVirtualNovaAula" class="col-form-label">Sala Virtual:</label>
-                        <input type="text" class="form-control" id="slVirtualNovaAula" required >
+                        <input type="text" class="form-control {salaVirtualVazio ? 'is-invalid' : ''}" id="slVirtualNovaAula"  >
                       </div>
                       <div class="form-group">
                         <label for="salaNovaAula" class="col-form-label">Sala de aula:</label>
-                        <input type="text" class="form-control" id="salaNovaAula" required >
+                        <input type="text" class="form-control {salaAulaVazio ? 'is-invalid' : ''}" id="salaNovaAula"  >
                       </div>
                       <div class="form-group">
                         <label for="obsNovaAula" class="col-form-label">Observação:</label>
                         <textarea class="form-control" id="obsNovaAula"></textarea>
                       </div>
+                      <small id="campoVazio" class="erro-preenchimento" style="color: red" >Ops... Você esqueceu de preencher algum campo obrigatório.</small>
                     </form>
                   </div>
                   <div class="modal-footer">
+                    
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Salvar</button>
+                    <button type="button" id="btnAddNovaAula" class="btn btn-primary" onclick={sendData()}>Salvar</button>
                   </div>
                 </div>
               </div>
@@ -188,6 +198,8 @@
     <script type="text/javascript" src="js/sidebar.js"></script>
     <!-- FullCalendar.js -->
     <script type="text/javascript" src="js/calendar.js"></script>
+    <!-- Events.js -->
+    <script type="text/javascript" src="js/events.js"></script>
     
 </body>
 </html>
