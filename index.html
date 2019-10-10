@@ -23,7 +23,7 @@
     <!-- FullCalendar JS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/locales/pt-br.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/locales-all.js"></script>
     
     
 </head>
@@ -110,13 +110,67 @@
                     </div>
                 </div>
             </nav>
-
+            
+            <!-- Calendar  -->
             <div class="line"></div>
 
             <div id='calendar'></div>
             
             <div class="line"></div>
+            <!-- /#Calendar  -->
             
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNovoEvento">
+              Launch demo modal
+            </button>
+            <!-- /Modal  -->
+            <div class="modal fade" id="addNovoEvento" tabindex="-1" role="dialog" aria-labelledby="addNovoEvento" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="headerModal">Nova Aula</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="dataNovaAula" class="col-form-label">Data:</label>
+                        <input type="date" class="form-control" id="dataNovaAula" required >
+                      </div>
+                      <div class="form-group">
+                        <label for="cursoNovaAula" class="col-form-label">Curso:</label>
+                        <input type="text" class="form-control" id="cursoNovaAula" required >
+                      </div>
+                      <div class="form-group">
+                        <label for="moduloNovaAula" class="col-form-label">Módulo:</label>
+                        <input type="text" class="form-control" id="moduloNovaAula" required >
+                      </div>
+                      <div class="form-group">
+                        <label for="disciplinaNovaAula" class="col-form-label">Discplina:</label>
+                        <input type="text" class="form-control" id="disciplinaNovaAula" required >
+                      </div>
+                      <div class="form-group">
+                        <label for="slVirtualNovaAula" class="col-form-label">Sala Virtual:</label>
+                        <input type="text" class="form-control" id="slVirtualNovaAula" required >
+                      </div>
+                      <div class="form-group">
+                        <label for="salaNovaAula" class="col-form-label">Sala de aula:</label>
+                        <input type="text" class="form-control" id="salaNovaAula" required >
+                      </div>
+                      <div class="form-group">
+                        <label for="obsNovaAula" class="col-form-label">Observação:</label>
+                        <textarea class="form-control" id="obsNovaAula"></textarea>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
             
         </div>
     </div>

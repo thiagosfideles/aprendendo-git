@@ -2,13 +2,14 @@
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        locale:'pt-br',
+        locale: 'pt-br',
         plugins: [ 'dayGrid'],
         header:{
           left: '',
           center: 'title',
           right: 'today prev,next'
         },
+
         events:[
             {
                 title:  'My Event',
