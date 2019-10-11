@@ -1,77 +1,45 @@
-
-
-let titleVazio = false;
-let startVazio = false;
-let cursoVazio = false;
-let moduloVazio = false;
-let salaAulaVazio = false;
-let salaVirtualVazio = false;
-let professorVazio = false;
-
-
 let cleanData = () => {
-    document.getElementById('disciplinaNovaAula').value = "";
-    document.getElementById('dataNovaAula').value = "";
-    document.getElementById('cursoNovaAula').value = "";
-    document.getElementById('moduloNovaAula').value = "";
-    document.getElementById('salaNovaAula').value = "";
-    document.getElementById('slVirtualNovaAula').value = "";
-    document.getElementById('professorNovaAula').value = "";
-    document.getElementById('obsNovaAula').value = "";
+  document.getElementById('disciplinaNovaAula').value = "";
+  document.getElementById('dataNovaAula').value = "";
+  document.getElementById('cursoNovaAula').value = "";
+  document.getElementById('moduloNovaAula').value = "";
+  document.getElementById('salaNovaAula').value = "";
+  document.getElementById('slVirtualNovaAula').value = "";
+  document.getElementById('professorNovaAula').value = "";
+  document.getElementById('obsNovaAula').value = "";
 }
 
-let sendData = () => {
-    
-    let title = document.getElementById('disciplinaNovaAula').value;
-    titleVazio = title === "";
-    let start = document.getElementById('dataNovaAula').value;
-    startVazio = start === "";
-    let curso = document.getElementById('cursoNovaAula').value;
-    cursoVazio = curso === "";
-    let modulo = document.getElementById('moduloNovaAula').value;
-    moduloVazio = modulo === "";
-    let salaAula = document.getElementById('salaNovaAula').value;
-    salaAulaVazio = salaAula === "";
-    let salaVirtual = document.getElementById('slVirtualNovaAula').value;
-    salaVirtualVazio = salaVirtual === "";
-    let professor = document.getElementById('professorNovaAula').value;
-    professorVazio = professor === "";
-    let observacao = document.getElementById('obsNovaAula').value;
-    
-    if (
-        titleVazio ||
-        startVazio ||
-        cursoVazio ||
-        moduloVazio ||
-        salaAulaVazio ||
-        salaVirtualVazio ||
-        professorVazio
-        )
-        
-        return;
+let title = document.getElementById('disciplinaNovaAula');
+let start = document.getElementById('dataNovaAula');
+let curso = document.getElementById('cursoNovaAula');
+let modulo = document.getElementById('moduloNovaAula');
+let salaAula = document.getElementById('salaNovaAula');
+let salaVirtual = document.getElementById('slVirtualNovaAula');
+let professor = document.getElementById('professorNovaAula');
+let observacao = document.getElementById('obsNovaAula');
 
-//acrescentar o codigo do firebase para criar o registro
-    
-    console.log(title);
-    console.log(start);
-
-// Gravando no Banco de Dados
-/*writeUserData(email,fname,lname){
-  firebase.database().ref('UsersList/').push({
-    email,
-    name,
-  }).then((data)=>{
-    console.tron.log('data ' , data)
-  }).catch((error)=>{
-    console.tron.log('error ' , error)
-  })
-}
+btnAddNovaAula.addEventListener('click', function () {
+  create(title.value, start.value, curso.value, modulo.value, salaAula.value,
+    salaVirtual.value, professor.value, observacao.value);
+})
 
 
+function create(title, start, curso, modulo, salaAula, salaVirtual, professor, observacao) {
+  let data = {
+    title: title,
+    start: start,
+    curso: curso,
+    modulo: modulo,
+    salaAula: salaAula,
+    salaVirtual: salaVirtual,
+    professor: professor,
+    observacao: observacao
 
-*/
+  };
 
+  return firebase.database().ref().child('cursos').push(data);
 
+  //mensagem de erro ou de cadastrado com sucesso.
 
 }
 

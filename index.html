@@ -1,205 +1,280 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calendar</title>
-    
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" />
-    
-     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Font Awesome JS -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/fontawesome.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/solid.js"></script>
-    
-    <!-- FullCalendar CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.css" type="text/css" />
-    
-    <!-- FullCalendar JS -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/locales-all.js"></script>
-    
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calendar</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    type="text/css" />
+
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Font Awesome JS -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/fontawesome.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/solid.js"></script>
+
+  <!-- FullCalendar CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.css"
+    type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.css"
+    type="text/css" />
+
+  <!-- FullCalendar JS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/locales-all.js"></script>
+
+
 </head>
+
 <body>
-    
+
   <div class="wrapper">
-        <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Agenda</h3>
-            </div>
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3>Agenda</h3>
+      </div>
 
-            <ul class="list-unstyled components">
-                <p>Dummy Heading</p>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Marcação de Aulas</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#addNovoEvento">Nova aula</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+      <ul class="list-unstyled components">
+        <p>Dummy Heading</p>
+        <li class="active">
+          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Marcação de
+            Aulas</a>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li>
+              <a href="#" data-toggle="modal" data-target="#addNovoEvento">Nova aula</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Dashboard</a>
+        </li>
+        <li>
+          <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+          <ul class="collapse list-unstyled" id="pageSubmenu">
+            <li>
+              <a href="#">Page 1</a>
+            </li>
+            <li>
+              <a href="#">Page 2</a>
+            </li>
+            <li>
+              <a href="#">Page 3</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Portfolio</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+          <button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-2x fa-align-left"></i>
+
+          </button>
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-align-justify"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Page</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Page</a>
+              </li>
             </ul>
-        </nav>
-
-        <!-- Page Content  -->
-        <div id="content">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-2x fa-align-left"></i>
-                        
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            
-            <!-- Calendar  -->
-            <div class="line"></div>
-
-            <div id='calendar'></div>
-            
-            <div class="line"></div>
-            <!-- /#Calendar  -->
-            
-            <button type="button" class="btn btn-primary" onclick={fuiClicado()}>
-              teste function
-            </button>
-            <!-- /Modal  -->
-            <div class="modal fade" id="addNovoEvento" tabindex="-1" role="dialog" aria-labelledby="addNovoEvento" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="headerModal">Nova Aula</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="form-group">
-                        <label for="dataNovaAula" class="col-form-label">Data:</label>
-                        <input type="date" class="form-control {startVazio ? 'is-invalid' : ''}" id="dataNovaAula">
-                      </div>
-                      <div class="form-group">
-                        <label for="cursoNovaAula" class="col-form-label">Curso:</label>
-                        <select class="custom-select {cursoVazio ? 'is-invalid' : ''}" id="cursoNovaAula">
-                            <option selected>Escolha...</option>
-                            <option value="TA">Técnico em Administração</option>
-                            <option value="TI">Técnico em Informática</option>
-                          </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="moduloNovaAula" class="col-form-label">Módulo:</label>
-                          <select class="custom-select {moduloVazio ? 'is-invalid' : ''}" id="moduloNovaAula">
-                            <option selected>Escolha...</option>
-                            <option value="1">Módulo I</option>
-                            <option value="2">Módulo II</option>
-                            <option value="3">Módulo III</option>
-                            <option value="4">Módulo IV</option>
-                          </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="disciplinaNovaAula" class="col-form-label">Discplina:</label>
-                        <input type="text" class="form-control {titleVazio ? 'is-invalid' : ''}" id="disciplinaNovaAula" >
-                      </div>
-                      <div class="form-group">
-                        <label for="professorNovaAula" class="col-form-label">Professor:</label>
-                        <input type="text" class="form-control {professorVazio ? 'is-invalid' : ''}" id="professorNovaAula"  >
-                      </div>
-                      <div class="form-group">
-                        <label for="slVirtualNovaAula" class="col-form-label">Sala Virtual:</label>
-                        <input type="text" class="form-control {salaVirtualVazio ? 'is-invalid' : ''}" id="slVirtualNovaAula"  >
-                      </div>
-                      <div class="form-group">
-                        <label for="salaNovaAula" class="col-form-label">Sala de aula:</label>
-                        <input type="text" class="form-control {salaAulaVazio ? 'is-invalid' : ''}" id="salaNovaAula"  >
-                      </div>
-                      <div class="form-group">
-                        <label for="obsNovaAula" class="col-form-label">Observação:</label>
-                        <textarea class="form-control" id="obsNovaAula"></textarea>
-                      </div>
-                      <small id="campoVazio" class="erro-preenchimento" style="color: red" >Ops... Você esqueceu de preencher algum campo obrigatório.</small>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" id="btnAddNovaAula" class="btn btn-primary" onclick={sendData()}>Salvar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
+          </div>
         </div>
-    </div>
-            
-        
+      </nav>
 
-    <!-- Scripts -->   
-    <!-- Jquery.js -->   
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.js -->   
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/esm/popper.min.js"></script>
-    <!-- Bootstrap.js -->   
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- Sidebar.js -->
-    <script type="text/javascript" src="js/sidebar.js"></script>
-    <!-- FullCalendar.js -->
-    <script type="text/javascript" src="js/calendar.js"></script>
-    <!-- Events.js -->
-    <script type="text/javascript" src="js/events.js"></script>
-    
+      <!-- Calendar  -->
+      <div class="line"></div>
+
+      <div id='calendar'></div>
+
+      <div class="line"></div>
+      <!-- /#Calendar  -->
+
+      <button type="button" class="btn btn-primary" onclick={fuiClicado()}>
+        teste function
+      </button>
+      <!-- Modal  -->
+      <!-- Modal Cadastro -->
+      <div class="modal fade" id="addNovoEvento" tabindex="-1" role="dialog" aria-labelledby="addNovoEvento"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="headerModal">Nova Aula</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="dataNovaAula" class="col-form-label">Data:</label>
+                  <input type="date" class="form-control {startVazio ? 'is-invalid' : ''}" id="dataNovaAula">
+                </div>
+                <div class="form-group">
+                  <label for="cursoNovaAula" class="col-form-label">Curso:</label>
+                  <select class="custom-select {cursoVazio ? 'is-invalid' : ''}" id="cursoNovaAula">
+                    <option selected>Escolha...</option>
+                    <option value="TA">Técnico em Administração</option>
+                    <option value="TI">Técnico em Informática</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="moduloNovaAula" class="col-form-label">Módulo:</label>
+                  <select class="custom-select {moduloVazio ? 'is-invalid' : ''}" id="moduloNovaAula">
+                    <option selected>Escolha...</option>
+                    <option value="1">Módulo I</option>
+                    <option value="2">Módulo II</option>
+                    <option value="3">Módulo III</option>
+                    <option value="4">Módulo IV</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="disciplinaNovaAula" class="col-form-label">Discplina:</label>
+                  <input type="text" class="form-control {titleVazio ? 'is-invalid' : ''}" id="disciplinaNovaAula">
+                </div>
+                <div class="form-group">
+                  <label for="professorNovaAula" class="col-form-label">Professor:</label>
+                  <input type="text" class="form-control {professorVazio ? 'is-invalid' : ''}" id="professorNovaAula">
+                </div>
+                <div class="form-group">
+                  <label for="slVirtualNovaAula" class="col-form-label">Sala Virtual:</label>
+                  <input type="text" class="form-control {salaVirtualVazio ? 'is-invalid' : ''}" id="slVirtualNovaAula">
+                </div>
+                <div class="form-group">
+                  <label for="salaNovaAula" class="col-form-label">Sala de aula:</label>
+                  <input type="text" class="form-control {salaAulaVazio ? 'is-invalid' : ''}" id="salaNovaAula">
+                </div>
+                <div class="form-group">
+                  <label for="obsNovaAula" class="col-form-label">Observação:</label>
+                  <textarea class="form-control" id="obsNovaAula"></textarea>
+                </div>
+                <small id="campoVazio" class="erro-preenchimento" style="color: red">Ops... Você esqueceu de preencher
+                  algum campo obrigatório.</small>
+              </form>
+            </div>
+            <div class="modal-footer">
+
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" id="btnAddNovaAula" class="btn btn-primary">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal visualização -->
+      <div class="modal fade" id="viewEvento" tabindex="-1" role="dialog" aria-labelledby="viewEvento"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="headerModal">Aula</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="viewDataAula" class="col-form-label">Data:</label>
+                  <input type="date" class="form-control" id="viewDataAula">
+                </div>
+                <div class="form-group">
+                  <label for="viewCurso" class="col-form-label">Curso:</label>
+                  <input class="custom-select" id="viewCurso">
+                </div>
+                <div class="form-group">
+                  <label for="viewModulo" class="col-form-label">Módulo:</label>
+                  <input class="custom-select" id="viewModulo">
+                </div>
+                <div class="form-group">
+                  <label for="viewDisciplina" class="col-form-label">Discplina:</label>
+                  <input type="text" class="form-control" id="viewDisciplina">
+                </div>
+                <div class="form-group">
+                  <label for="viewProfessor" class="col-form-label">Professor:</label>
+                  <input type="text" class="form-control" id="viewProfessor">
+                </div>
+                <div class="form-group">
+                  <label for="viewSalaVirtual" class="col-form-label">Sala Virtual:</label>
+                  <input type="text" class="form-control" id="viewSalaVirtual">
+                </div>
+                <div class="form-group">
+                  <label for="viewSalaAula" class="col-form-label">Sala de aula:</label>
+                  <input type="text" class="form-control" id="viewSalaAula">
+                </div>
+                <div class="form-group">
+                  <label for="viewObs" class="col-form-label">Observação:</label>
+                  <textarea class="form-control" id="viewObs"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Scripts -->
+  <!-- Firebase.js -->
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+  <!-- Jquery.js -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <!-- Popper.js -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/esm/popper.min.js"></script>
+  <!-- Bootstrap.js -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Sidebar.js -->
+  <script type="text/javascript" src="js/sidebar.js"></script>
+  <!-- FullCalendar.js -->
+  <script type="text/javascript" src="js/conexao.js"></script>
+  <script type="text/javascript" src="js/calendar.js"></script>
+  <!-- Events.js -->
+  <script type="text/javascript" src="js/events.js"></script>
+
 </body>
+
 </html>

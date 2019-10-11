@@ -24,7 +24,10 @@
         eventClick: function(info) {
             info.jsEvent.preventDefault();
             
-            alert(info.event.title);
+            $('#viewEvento #viewDataAula').text(info.event.start);
+            $('#viewEvento #viewDisciplina').text(info.event.title);
+            $('#viewEvento').modal('show');
+
         }  
                     
         });
