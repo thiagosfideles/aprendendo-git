@@ -1,36 +1,48 @@
-  document.addEventListener('DOMContentLoaded', function() {
+/*global cursosRef*/
+/*global FullCalendar*/
+/*global $*/
+/*global exibe*/
+
+
+document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
         locale: 'pt-br',
-        plugins: [ 'dayGrid'],
-        header:{
-          left: '',
-          center: 'title',
-          right: 'today prev,next'
+        plugins: ['dayGrid'],
+        header: {
+            left: '',
+            center: 'title',
+            right: 'today prev,next'
         },
 
-        events:[
-            {
-                title:  'My Event',
-                start:  '2019-10-10T19:00:00',
-                allDay: false,
-                classNames: ['curso-ti']
-                //backgroundColor: '#f57c00', //cor para cursos de TI
-                //borderColor: '#f57c00' //cor para cursos de TI
-            }
-        ],
-        
-        eventClick: function(info) {
-            info.jsEvent.preventDefault();
-            
-            $('#viewEvento #viewDataAula').text(info.event.start);
-            $('#viewEvento #viewDisciplina').text(info.event.title);
-            $('#viewEvento').modal('show');
+        events: function(info, successCallback, failureCalllback) {
+			  let array = [];
+			  cursosRef.on('value', function(snapshot){
+				snapshot.forEach(function(childSnapshot){
+				  let item = childSnapshot.val()
+				  array.push(item)
+				})
+			  })
+			  successCallback(array);
+			},
 
-        }  
-                    
-        });
+        eventClick: function (curso) {
+            cursosRef.on("child_added", snap => {
+                let curso = snap.val();
+                $('#viewEvento #viewDataAula').text(curso.start);
+                $('#viewEvento #viewCurso').text(curso.curso);
+                $('#viewEvento #viewModulo').text(curso.modulo);
+                $('#viewEvento #viewDisciplina').text(curso.title);
+                $('#viewEvento #viewProfessor').text(curso.professor);
+                $('#viewEvento #viewSalaVirtual').text(curso.salaVirtual);
+                $('#viewEvento #viewSalaAula').text(curso.salaAula);
+                $('#viewEvento #viewObs').text(curso.observacao);
+                $('#viewEvento').modal('show');
+            });
+        }
 
-        calendar.render();
-      });
+    });
+
+    calendar.render();
+});

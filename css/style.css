@@ -193,3 +193,41 @@ a.article:hover {
 .erro-preenchimento {
     display: none;
 }
+
+
+/* ---------------------------------------------------
+    Teste
+----------------------------------------------------- */
+
+#cursoList {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    float: left;
+    margin: 10px;
+    border: 1px solid #4fc3fc;
+}
+#cursoList h2 {
+    padding: 10px;
+    margin: 0;
+    color: white;
+}
+#cursoList li {
+    padding: 5px 10px;
+    border-top: 1px solid #4fc3fc;
+    cursor: pointer;
+    color: white;
+    font-style: italic;
+}
+#cursoList li:hover {
+    background: #4fc3fc;
+}
+#cursoDetail {
+    float: left;
+    width: 200px;
+    margin: 10px;
+    margin-left: 0;
+    padding: 10px;
+    border: 1px solid #4fc3fc;
+    color: white;
+}
