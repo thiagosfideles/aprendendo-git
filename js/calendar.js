@@ -18,20 +18,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         events: 'https://sigead.firebaseio.com/aulas.json',
 
-        eventClick: function (aula) {
-            aulasRef.on("value", snap => {
-                let aula = snap.val();
-                $('#viewEvento #viewDataAula').val(aula.start);
-                $('#viewEvento #viewCurso').val(aula.curso);
-                $('#viewEvento #viewModulo').val(aula.modulo);
-                $('#viewEvento #viewDisciplina').val(aula.title);
-                $('#viewEvento #viewProfessor').val(aula.professor);
-                $('#viewEvento #viewSalaVirtual').val(aula.salaVirtual);
-                $('#viewEvento #viewSalaAula').val(aula.salaAula);
-                $('#viewEvento #viewObs').val(aula.observacao);
+        eventClick: function(info) {
+                $('#viewEvento #viewDataAula').val(info.event.start);
+                $('#viewEvento #viewCurso').val(info.event.extendedProps.curso);
+                $('#viewEvento #viewModulo').val(info.event.extendedProps.modulo);
+                $('#viewEvento #viewDisciplina').val(info.event.title);
+                $('#viewEvento #viewProfessor').val(info.event.extendedProps.professor);
+                $('#viewEvento #viewSalaVirtual').val(info.event.extendedProps.salaVirtual);
+                $('#viewEvento #viewSalaAula').val(info.event.extendedProps.salaAula);
+                $('#viewEvento #viewObs').val(info.event.extendedProps.observacao);
                 $('#viewEvento').modal('show');
-            });
-        }
+                        
+                        
+        } ,
 
     });
 

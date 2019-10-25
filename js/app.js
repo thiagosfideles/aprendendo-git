@@ -75,7 +75,6 @@ function exibe () {
   })
   return array
 }
- console.log(exibe());
 
 
 
