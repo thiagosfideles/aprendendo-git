@@ -25,13 +25,12 @@ let observacao = document.getElementById('obsNovaAula').value;
 
 
 const dbRef = firebase.database().ref();
-const cursosRef = dbRef.child('cursos');
+const aulasRef = dbRef.child('aulas');
 
 
 /* ---------------------------------------------------
     CREATE
 ----------------------------------------------------- */
-
 
 
 function cadastraAula () {
@@ -47,7 +46,7 @@ function cadastraAula () {
     observacao: observacao
   }
   
-firebase.database().ref().child('cursos' + '1').set(
+firebase.database().ref().child('aulas' + '1').set(
  dados,function(error) {
     if (error) {
       console.log('erro na gravaçao')
@@ -68,7 +67,7 @@ firebase.database().ref().child('cursos' + '1').set(
 
 function exibe () {
   let array = [];
-  cursosRef.on('value', function(snapshot){
+  aulasRef.on('value', function(snapshot){
     snapshot.forEach(function(childSnapshot){
       let item = childSnapshot.val()
       array.push(item)
@@ -76,30 +75,8 @@ function exibe () {
   })
   return array
 }
+ console.log(exibe());
 
-
-
-const cursoListUI = document.getElementById("cursoList");
-cursosRef.on("child_added", snap => {
-  let curso = snap.val();
-  let $li = document.createElement("li");
-  $li.innerHTML = curso.title;
-  $li.setAttribute("child-key", snap.key);
-  $li.addEventListener("click", cursoClicked)
-  cursoListUI.append($li);
-});
-
-function cursoClicked(e) {
-  var cursoID = e.target.getAttribute("child-key");
-  const cursosRef = dbRef.child('cursos/' + cursoID);
-  const cursoDetailUI = document.getElementById("cursoDetail");
-  cursoDetailUI.innerHTML = ""
-  cursosRef.on("child_added", snap => {
-    var $p = document.createElement("p");
-   $p.innerHTML = snap.key + " - " + snap.val()
-   cursoDetailUI.append($p); 
-  });
-}
 
 
 /* ---------------------------------------------------

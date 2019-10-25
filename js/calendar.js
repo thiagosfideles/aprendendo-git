@@ -1,4 +1,4 @@
-/*global cursosRef*/
+/*global aulasRef*/
 /*global FullCalendar*/
 /*global $*/
 /*global exibe*/
@@ -16,28 +16,19 @@ document.addEventListener('DOMContentLoaded', function () {
             right: 'today prev,next'
         },
 
-        events: function(info, successCallback, failureCalllback) {
-			  let array = [];
-			  cursosRef.on('value', function(snapshot){
-				snapshot.forEach(function(childSnapshot){
-				  let item = childSnapshot.val()
-				  array.push(item)
-				})
-			  })
-			  successCallback(array);
-			},
+        events: 'https://sigead.firebaseio.com/aulas.json',
 
-        eventClick: function (curso) {
-            cursosRef.on("child_added", snap => {
-                let curso = snap.val();
-                $('#viewEvento #viewDataAula').text(curso.start);
-                $('#viewEvento #viewCurso').text(curso.curso);
-                $('#viewEvento #viewModulo').text(curso.modulo);
-                $('#viewEvento #viewDisciplina').text(curso.title);
-                $('#viewEvento #viewProfessor').text(curso.professor);
-                $('#viewEvento #viewSalaVirtual').text(curso.salaVirtual);
-                $('#viewEvento #viewSalaAula').text(curso.salaAula);
-                $('#viewEvento #viewObs').text(curso.observacao);
+        eventClick: function (aula) {
+            aulasRef.on("value", snap => {
+                let aula = snap.val();
+                $('#viewEvento #viewDataAula').val(aula.start);
+                $('#viewEvento #viewCurso').val(aula.curso);
+                $('#viewEvento #viewModulo').val(aula.modulo);
+                $('#viewEvento #viewDisciplina').val(aula.title);
+                $('#viewEvento #viewProfessor').val(aula.professor);
+                $('#viewEvento #viewSalaVirtual').val(aula.salaVirtual);
+                $('#viewEvento #viewSalaAula').val(aula.salaAula);
+                $('#viewEvento #viewObs').val(aula.observacao);
                 $('#viewEvento').modal('show');
             });
         }

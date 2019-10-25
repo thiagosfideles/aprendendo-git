@@ -123,31 +123,7 @@
 
       <div class="line"></div>
       <!-- /#Calendar  -->
-      
-      <!-- Listar info BD  -->
-      
-        <ul id="cursoList"></ul>
-        
-        <div id="cursoDetail">
-            <p>
-                Data :
-                <strong class="detailDate"></strong>
-            </p>
-            <p>
-                Discplina:
-                <strong class="detailDisciplina"></strong>
-            </p>
-            <p>
-                Professor:
-                <strong class="detailProfessor"></strong>
-            </p>
-        </div>
-        
-      <div class="line"></div>
 
-      <!--<button type="button" class="btn btn-primary" onclick={cadastraAula()}>
-        teste function
-      </button>-->
       <!-- Modal  -->
       <!-- Modal Cadastro -->
       <div class="modal fade" id="addNovoEvento" tabindex="-1" role="dialog" aria-labelledby="addNovoEvento"
@@ -228,35 +204,49 @@
               </button>
             </div>
             <div class="modal-body">
-              
-                <dl class="row">
-                
-                  <dt class="col-sm-4">Data da aula:</dt>
-                  <dd class="col-sm-6" id="viewDataAula"></dd>
-               
-                  <dt class="col-sm-4">Curso:</dt>
-                  <dd class="col-sm-6" id="viewCurso"></dd>
-                
-                  <dt class="col-sm-4">Módulo:</dt>
-                  <dd class="col-sm-6" id="viewModulo"></dd>
-                
-                  <dt class="col-sm-4">Disciplina:</dt>
-                  <dd class="col-sm-6" id="viewDisciplina"></dd>
-                
-                  <dt class="col-sm-4">Professor:</dt>
-                  <dd class="col-sm-6" id="viewProfessor"></dd>
-                
-                  <dt class="col-sm-4">Sala Virtual:</dt>
-                  <dd class="col-sm-6" id="viewSalaVirtual"></dd>
-                
-                  <dt class="col-sm-4">Sala de aula:</dt>
-                  <dd class="col-sm-6" id="viewSalaAula"></dd>
-                
-                  <dt class="col-sm-4">Observação:</dt>
-                  <dd class="col-sm-6" id="viewObs"></dd>
-                
-                </dl>
-             
+
+              <form>
+                <div class="form-group">
+                  <label for="viewDataAula" class="col-form-label">Data da aula:</label>
+                  <input type="text" class="form-control" id="viewDataAula" disabled>
+                </div>
+
+                <div class="form-group">
+                  <label for="viewDisciplina" class="col-form-label">Disciplina:</label>
+                  <input type="text" class="form-control" id="viewDisciplina" disabled>
+                </div>
+
+                <div class="form-group">
+                  <label for="viewCurso" class="col-form-label">Curso:</label>
+                  <input type="text" class="form-control" id="viewCurso" disabled>
+                </div>
+
+                <div class="form-group">
+                  <label for="viewModulo" class="col-form-label">Módulo:</label>
+                  <input type="text" class="form-control" id="viewModulo" disabled>
+                </div>
+
+                <div class="form-group">
+                  <label for="viewProfessor" class="col-form-label">Professor:</label>
+                  <input type="text" class="form-control" id="viewProfessor" disabled>
+                </div>
+
+                <div class="form-group">
+                  <label for="viewSalaAula" class="col-form-label">Sala de Aula:</label>
+                  <input type="text" class="form-control" id="viewSalaAula" disabled>
+                </div>
+
+                <div class="form-group">
+                  <label for="viewSalaVirtual" class="col-form-label">Sala Virtual:</label>
+                  <input type="text" class="form-control" id="viewSalaVirtual" disabled>
+                </div>
+
+                <div class="form-group">
+                  <label for="viewObs" class="col-form-label">Observação:</label>
+                  <input type="text" class="form-control" id="viewObs" disabled>
+                </div>
+              </form>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
