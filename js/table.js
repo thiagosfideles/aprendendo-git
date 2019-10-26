@@ -11,7 +11,7 @@ function Dataset() {
 
 
 window.onload = function () {
-    fetch("https://sigead.firebaseio.com/disciplinas.json")
+    fetch("https://sigead.firebaseio.com/ead/0/informacoes.json")
         .then(response => response.json())
         .catch(error => console.error("Erro:" + error))
         .then(response => {

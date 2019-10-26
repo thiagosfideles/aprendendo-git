@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             right: 'today prev,next'
         },
 
-        events: 'https://sigead.firebaseio.com/aulas.json',
+        events: 'https://sigead.firebaseio.com/ead/1/aulas.json',
 
         eventClick: function(info) {
                 let date = new Date(info.event.start);
