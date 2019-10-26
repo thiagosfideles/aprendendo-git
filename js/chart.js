@@ -1,33 +1,20 @@
 /*global Chart*/
 
-var ctx = document.getElementById('myChart');
-var myChart = new Chart(ctx, {
+let canvas = document.getElementById('myChart');
+let ctx = canvas.getContext('2d');
+
+let infoChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
+        labels: [],
+        datasets: []
     },
     options: {
+        tooltips: {
+            mode: 'index',
+            intersect: false,
+            titleMarginBottom: 10
+        },
         scales: {
             yAxes: [{
                 ticks: {
@@ -37,3 +24,16 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+
+canvas.onclick = evt => {
+    let infoEvent = infoChart.getElementsAtEvent(evt);
+    let pTable = document.getElementById('infoTables');
+    pTable.innerHTML = `
+    <tr>
+        <td>${infoChart.data.labels[infoEvent[0]._index]}</td>
+        <td>${infoChart.data.datasets[0].data[infoEvent[0]._index]}</td>
+        <td>${infoChart.data.datasets[1].data[infoEvent[0]._index]}</td>
+        <td>${infoChart.data.datasets[2].data[infoEvent[0]._index]}</td>
+        <td>${infoChart.data.datasets[3].data[infoEvent[0]._index]}</td>
+    </tr>`;
+};

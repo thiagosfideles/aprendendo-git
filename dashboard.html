@@ -76,8 +76,8 @@
 
           <button type="button" id="sidebarCollapse" class="btn btn-info">
             <i class="fas fa-2x fa-align-left"></i>
-
           </button>
+
           <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -105,31 +105,58 @@
 
       <!-- Calendar  -->
       <div class="line"></div>
-  
-        <canvas id="myChart"></canvas>
 
-      <div class="line"></div>
-      <!-- /#Calendar  -->
+      <body>
+        <div class="container">
+          <div class="col mt-2">
+            <canvas id="myChart"></canvas>
+          </div>
 
-      <!-- Modal  -->
-      <!-- Modal Cadastro -->
+          <div class="col mt-4">
+            <table class="table table-sm" id="myTable">
+              <thead>
+                <tr class="text-center">
+                  <th scope="col">Nome</th>
+                  <th scope="col">Matriculados</th>
+                  <th scope="col">Desistentes</th>
+                  <th scope="col">Aptos</th>
+                  <th scope="col">Não Aptos</th>
+                  <th scope="col">Desistentes (%)</th>
+                  <th scope="col">Não Aptos (%)</th>
+                </tr>
+              </thead>
+              <tbody class="text-center" id="infoTables">
+              </tbody>
+            </table>
+          </div>
 
-  <!-- Scripts -->
 
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <script type="text/javascript" src="js/chart.js"></script>
+          <div class="line"></div>
+          <!-- /#Calendar  -->
 
-  <!-- Jquery.js -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <!-- Bootstrap.js -->
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <!-- Events.js -->
-  <script type="text/javascript" src="js/app.js"></script>
+          <!-- Modal  -->
+          <!-- Modal Cadastro -->
 
-</body>
+          <!-- Scripts -->
+
+          <!-- Chart.js -->
+          <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+          <script src="js/chart.js"></script>
+          <script src="js/table.js"></script>
+
+          <!-- Jquery.js -->
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+          <!-- Popper.js -->
+          <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/esm/popper.min.js"></script>
+          <!-- Bootstrap.js -->
+          <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+          <!-- Events.js -->
+          <script type="text/javascript" src="js/sidebar.js"></script>
+
+      </body>
 
 </html>
