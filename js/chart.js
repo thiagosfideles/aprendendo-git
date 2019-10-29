@@ -37,3 +37,31 @@ canvas.onclick = evt => {
         <td>${infoChart.data.datasets[3].data[infoEvent[0]._index]}</td>
     </tr>`;
 };
+
+//gráfico de donuts
+new Chart(document.getElementById("myChartPie"), {
+    type: 'doughnut',
+    data: {
+        labels: ["Africa", "Asia", "Europe"],
+        datasets: [
+            {
+                label: "Population (millions)",
+                backgroundColor: ["#3cba9f", "#e8c3b9", "#c45850"],
+                data: [734, 784, 433]
+            }
+        ]
+    }
+});
+
+//gráfico de pizza
+new Chart(document.getElementById("motivosReprovacao"), {
+    type: 'pie',
+    data: {
+        labels: ["Africa", "Asia"],
+        datasets: [{
+            label: "Population (millions)",
+            backgroundColor: ["#3e95cd", "#8e5ea2"],
+            data: [2478, 5267]
+        }]
+    }
+});
