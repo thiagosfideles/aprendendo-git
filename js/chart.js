@@ -1,5 +1,6 @@
 /*global Chart*/
 
+//grafico mod. I
 let canvas = document.getElementById('myChart');
 let ctx = canvas.getContext('2d');
 
@@ -15,13 +16,13 @@ let infoChart = new Chart(ctx, {
             intersect: false,
             titleMarginBottom: 10
         },
-        scales: {
+ /*        scales: {
             yAxes: [{
                 ticks: {
                     beginAtZero: true
                 }
             }]
-        }
+        } */
     }
 });
 
@@ -38,18 +39,12 @@ canvas.onclick = evt => {
     </tr>`;
 };
 
-//gráfico de donuts
-new Chart(document.getElementById("myChartPie"), {
+/* //gráfico de donuts
+let myChartPie = new Chart(document.getElementById("myChartPie"), {
     type: 'doughnut',
     data: {
-        labels: ["Africa", "Asia", "Europe"],
-        datasets: [
-            {
-                label: "Population (millions)",
-                backgroundColor: ["#3cba9f", "#e8c3b9", "#c45850"],
-                data: [734, 784, 433]
-            }
-        ]
+        labels: [],
+        datasets: []
     }
 });
 
@@ -63,5 +58,32 @@ new Chart(document.getElementById("motivosReprovacao"), {
             backgroundColor: ["#3e95cd", "#8e5ea2"],
             data: [2478, 5267]
         }]
+    }
+}); */
+
+//grafico mod. I
+
+let canvasMod2 = document.getElementById('chartMod2');
+let ctx1 = canvasMod2.getContext('2d');
+
+let infoChartMd2 = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        labels: [],
+        datasets: []
+    },
+    options: {
+        tooltips: {
+            mode: 'index',
+            intersect: false,
+            titleMarginBottom: 10
+        },
+ /*        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        } */
     }
 });
