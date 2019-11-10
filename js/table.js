@@ -15,14 +15,17 @@ function Dataset() {
     }
 }
 
-infoDadosTi = fetch('https://sigead.firebaseio.com/ead/0/informacoes.json')
-.then(response => response.json())
+fetch('https://sigead.firebaseio.com/ead/0/informacoes.json')
+.then(function(infoDadosTi){
+    console.log(infoDadosTi)
+})
+/* .then(response => response.json())
 .catch(error => console.error('Error: '+ error))
 .then(response => {
     return response;
 });
 
-console.log(infoDadosTi);
+console.log(infoDadosTi); */
 
 
 /* window.onload = function () {
