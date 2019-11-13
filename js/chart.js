@@ -1,89 +1,85 @@
 /*global Chart*/
 
-//grafico mod. I
-let canvas = document.getElementById('myChart');
-let ctx = canvas.getContext('2d');
+//declaração de variaveis
 
-let infoChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: [],
-        datasets: []
-    },
-    options: {
-        tooltips: {
-            mode: 'index',
-            intersect: false,
-            titleMarginBottom: 10
-        },
- /*        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        } */
-    }
-});
+//buscando dados json
+async function recebeDados() {
+    const resposta = await fetch('https://sigead.firebaseio.com/ead/0/informacoes.json')
+    const dados = await resposta.json();
+    return dados;
+}
 
-canvas.onclick = evt => {
-    let infoEvent = infoChart.getElementsAtEvent(evt);
-    let pTable = document.getElementById('infoTables');
-    pTable.innerHTML = `
-    <tr>
-        <td>${infoChart.data.labels[infoEvent[0]._index]}</td>
-        <td>${infoChart.data.datasets[0].data[infoEvent[0]._index]}</td>
-        <td>${infoChart.data.datasets[1].data[infoEvent[0]._index]}</td>
-        <td>${infoChart.data.datasets[2].data[infoEvent[0]._index]}</td>
-        <td>${infoChart.data.datasets[3].data[infoEvent[0]._index]}</td>
-    </tr>`;
+//carregando o grafico
+window.onload = function () {
+
+}
+
+//criando construtor datasets
+let graficoAlunosData = {
+    labels: [],
+    datasets: [{
+        label: 'Matriculados',
+        backgroundColor: 'rgba(31,171,137, 1)',
+        borderColor: 'rgba(31,171,137, 0.3)',
+        borderWidth: 1,
+        data: []
+    }, {
+        label: 'Desistentes',
+        backgroundColor: 'rgba(255, 128, 128, 1)',
+        borderColor: 'rgba(55, 128, 128, 0.3)',
+        borderWidth: 1,
+        data: []
+    }]
 };
 
-/* //gráfico de donuts
-let myChartPie = new Chart(document.getElementById("myChartPie"), {
-    type: 'doughnut',
-    data: {
-        labels: [],
-        datasets: []
+//criando os graficos
+window.onload = async function () {
+    const ctx = document.getElementById('graficosAlunos').getContext('2d');
+    window.graficosAlunos = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: graficoAlunosData,
+        options: {
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        display: true,
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        display: false,
+                    }
+                }],
+            }
+        }
+
+    });
+}
+
+//coletando dados para utilzar no grafico
+async function preencheGrafico() {
+
+    let moduloSelecionado = document.getElementById('selecionaModulo').value
+
+    const dadosRecebidos = await recebeDados();
+    if (graficoAlunosData.labels.length > 0) {
+        graficoAlunosData.labels = []
     }
-});
 
-//gráfico de pizza
-new Chart(document.getElementById("motivosReprovacao"), {
-    type: 'pie',
-    data: {
-        labels: ["Africa", "Asia"],
-        datasets: [{
-            label: "Population (millions)",
-            backgroundColor: ["#3e95cd", "#8e5ea2"],
-            data: [2478, 5267]
-        }]
+    if (graficoAlunosData.datasets[0].data.length > 0) {
+        graficoAlunosData.datasets[0].data = []
     }
-}); */
 
-//grafico mod. I
-
-let canvasMod2 = document.getElementById('chartMod2');
-let ctx1 = canvasMod2.getContext('2d');
-
-let infoChartMd2 = new Chart(ctx1, {
-    type: 'bar',
-    data: {
-        labels: [],
-        datasets: []
-    },
-    options: {
-        tooltips: {
-            mode: 'index',
-            intersect: false,
-            titleMarginBottom: 10
-        },
- /*        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        } */
+    if (graficoAlunosData.datasets[1].data.length > 0) {
+        graficoAlunosData.datasets[1].data = []
     }
-});
+    dadosRecebidos.forEach(dadoRecebido => {
+        if (dadoRecebido.modulo === moduloSelecionado) {
+            graficoAlunosData.labels.push(dadoRecebido.nome);
+            graficoAlunosData.datasets[0].data.push(dadoRecebido.matriculados);
+            graficoAlunosData.datasets[1].data.push(dadoRecebido.desistentes);
+        }
+
+    });
+    window.graficosAlunos.update();
+}
