@@ -108,21 +108,25 @@
 
       <div class="container-fluid">
         <!-- <h3 class="text-center">Análise TI - Módulo I</h3> -->
-        <select name="selecionaModulo" id="selecionaModulo" class="mb-3"
-        onchange="preencheGrafico()">
-          <option value="opcao" selected> -- Selecione o Módulo ---</option>
-          <option value="1">Módulo I</option>
-          <option value="2">Módulo II</option>
-          <option value="3">Módulo III</option>
-          <option value="4">Módulo IV</option>
-        </select>
-
+        
+        <div class="form-group col-5">
+          <label>Módulo</label>
+          <select name="selecionaModulo" id="selecionaModulo" class="form-control"
+          onchange="preencheGrafico()">
+            <option value="opcao" selected> -- Selecione o Módulo ---</option>
+            <option value="1">Módulo I</option>
+            <option value="2">Módulo II</option>
+            <option value="3">Módulo III</option>
+            <option value="4">Módulo IV</option>
+          </select>
+        </div>
+      
         <div class="row">
           <div class="col-xl-6 col-lg-6">
             <div class="card shadow mb-4">
               <!-- Card Header - Dropdown -->
               <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Matriculados <em>versus</em> Desistente</h6>
+                <h6 class="m-0 font-weight-bold text-primary">matriculados <em>versus</em> desistente</h6>
               </div>
               <!-- Card Body -->
               <div class="card-body">
@@ -138,7 +142,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Aptos <em>versus</em> Não Aptos</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">aptos e não aptos</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -153,7 +157,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Matriculados <em>versus</em> Aptos</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">frequentes <em>versus</em> aptos</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
