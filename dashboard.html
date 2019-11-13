@@ -110,7 +110,7 @@
         <!-- <h3 class="text-center">Análise TI - Módulo I</h3> -->
         <select name="selecionaModulo" id="selecionaModulo" class="mb-3"
         onchange="preencheGrafico()">
-          <option value="opcao"> -- Selecione o Módulo ---</option>
+          <option value="opcao" selected> -- Selecione o Módulo ---</option>
           <option value="1">Módulo I</option>
           <option value="2">Módulo II</option>
           <option value="3">Módulo III</option>
@@ -144,6 +144,21 @@
                 <div class="card-body">
                   <div class="chart-area">
                     <canvas id="graficosAptos"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-xl-6 col-lg-6">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Matriculados <em>versus</em> Aptos</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area">
+                    <canvas id="graficosResultado"></canvas>
                   </div>
                 </div>
               </div>
