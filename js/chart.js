@@ -67,13 +67,23 @@ let graficoResultadoData = {
         order: 1
         },
         {
+        type: 'line',
+        label: 'Não aptos',
+        fill: false,
+        backgroundColor: 'rgba(255, 128, 128, 0.3)',
+        borderColor: 'rgba(255, 128, 128, 1)',
+        borderWidth: 2,
+        data: [],
+        order: 2
+        },
+        {
         type: 'bar',
         label: 'Frequentes',
         backgroundColor: 'rgba(31,171,137, 0.3)',
         borderColor: 'rgba(31,171,137, 1)',
         borderWidth: 1,
         data: [],
-        order: 2
+        order: 3
     }]
 };
 
@@ -211,7 +221,10 @@ async function preencheGrafico() {
     if (graficoResultadoData.datasets[1].data.length > 0) {
         graficoResultadoData.datasets[1].data = []
     }
-    
+
+    if (graficoResultadoData.datasets[2].data.length > 0) {
+        graficoResultadoData.datasets[2].data = []
+    }
     
     
     dadosRecebidos.forEach(dadoRecebido => {
@@ -227,7 +240,8 @@ async function preencheGrafico() {
             
             graficoResultadoData.labels.push(dadoRecebido.nome);
             graficoResultadoData.datasets[0].data.push(dadoRecebido.aptos);
-            graficoResultadoData.datasets[1].data.push(dadoRecebido.frequentes);
+            graficoResultadoData.datasets[1].data.push(dadoRecebido.naoAptos.total);
+            graficoResultadoData.datasets[2].data.push(dadoRecebido.frequentes);
             
 
         }
