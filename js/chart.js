@@ -236,4 +236,5 @@ async function preencheGrafico() {
     window.graficosAlunos.update();
     window.graficosAptos.update();
     window.graficosResultado.update();
+    preencheTabela();
 }
