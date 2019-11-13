@@ -64,14 +64,16 @@ let graficoResultadoData = {
         borderColor: 'rgba(31, 135, 171, 1)',
         borderWidth: 2,
         data: [],
+        order: 1
         },
         {
         type: 'bar',
-        label: 'Matriculados',
+        label: 'Frequentes',
         backgroundColor: 'rgba(31,171,137, 0.3)',
         borderColor: 'rgba(31,171,137, 1)',
         borderWidth: 1,
-        data: []
+        data: [],
+        order: 2
     }]
 };
 
@@ -87,8 +89,8 @@ window.onload = async function () {
                 position: 'right'
             },
             tooltips: {
-              mode: 'index',
-              intersect: true
+                mode: 'index',
+                intersect: true
             },
             scales: {
                 xAxes: [{
@@ -117,6 +119,9 @@ window.onload = async function () {
             },
             scales: {
                 xAxes: [{
+                    ticks: {
+                        min: 0
+                    },
                     gridLines: {
                         display: false,
                     }
@@ -151,6 +156,9 @@ window.onload = async function () {
                     }
                 }],
                 yAxes: [{
+                    ticks: {
+                        min: 0
+                    },
                     gridLines: {
                         display: false,
                     }
@@ -219,7 +227,7 @@ async function preencheGrafico() {
             
             graficoResultadoData.labels.push(dadoRecebido.nome);
             graficoResultadoData.datasets[0].data.push(dadoRecebido.aptos);
-            graficoResultadoData.datasets[1].data.push(dadoRecebido.matriculados);
+            graficoResultadoData.datasets[1].data.push(dadoRecebido.frequentes);
             
 
         }
